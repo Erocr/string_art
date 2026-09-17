@@ -2,6 +2,25 @@ from .utilities import *
 
 
 def string_art(image: Image.Image, nails, string_width=0.1):
+    """ Generate a string-art representation of an image.
+
+    The image can be either grayscale or RGB.
+    For grayscale images, the string-art algorithm is applied directly. For RGB images,
+    each color channel is processed independently and the resulting
+    channels are merged into a single RGB image.
+
+    :param image: The PIL image to reproduce using string art.
+    :param nails: A list of nail positions used to create the string art.
+    :param string_width: The width of the lines used to draw the string art.
+        Defaults to 0.1.
+
+    :return: A tuple containing:
+        - The generated string-art image as a PIL Image.
+        - The sequence of nails used to generate the image.
+        For RGB images, the sequences are separated by "R", "G", and "B" markers.
+        - The total execution time in seconds.
+    """
+
     image, nails = crop_image(image, nails)
     I = np.array(image.get_flattened_data())
     image_size = (image.width, image.height)
