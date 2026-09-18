@@ -4,8 +4,9 @@ This program tries to reproduce an image as accurately as possible using string 
 
 It uses only one thread, which makes the resulting sequence of nails easy to follow and reproduce manually.
 
-![image de base](tests/cat_silhouet/base_image.png)
-![string art associé](tests/cat_silhouet/output/200_nails.png)
+![image de base](tests/cat_silhouet/base_image.jpg)
+![string art associé](tests/cat_silhouet/output/100_nails.png)
+![string art associé](tests/cat_silhouet/output/150_nails.png)
 
 ## How to install
 
@@ -25,7 +26,8 @@ The main function is `string_art`.
 It takes:
 - a PIL image, 
 - a list of nail positions, 
-- the width of the thread, 
+- the width of the thread,  
+
 It then computes a sequence of nails that produces a string-art representation of the input image.
 
 If you want to quickly generate a set of evenly distributed nails, you can use `nails_circle_shape`, 
